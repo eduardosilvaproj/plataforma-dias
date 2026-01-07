@@ -1,0 +1,1664 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUPO DIAS - Centro de Treinamento e Certificação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a2a3a;
+            --accent-gold: #d4af37;
+            --text-light: #f8f9fa;
+            --text-dark: #333333;
+            --bg-light: #f5f7fa;
+            --bg-white: #ffffff;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --bronze: #cd7f32;
+            --silver: #c0c0c0;
+            --gold: #ffd700;
+            --diamond: #b9f2ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .site-logo {
+            height: 40px; /* Adjust size as needed */
+            margin-right: 15px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .login-btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.7)), url('https://picsum.photos/seed/dias-luxury-kitchen/1600/800.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .value-card {
+            background-color: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .value-card i {
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* Areas Section */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .area-card {
+            background-color: var(--bg-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .area-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .area-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .area-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .area-content p {
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Certification Section */
+        .certification-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .medals {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .medal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 160px;
+        }
+
+        .medal-icon {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .bronze-medal { background: linear-gradient(135deg, #cd7f32, #b87333); }
+        .silver-medal { background: linear-gradient(135deg, #c0c0c0, #a8a8a8); }
+        .gold-medal { background: linear-gradient(135deg, #ffd700, #ffcc00); }
+        .diamond-medal { background: linear-gradient(135deg, #b9f2ff, #79c7db); }
+
+        .medal h3 { font-size: 1.3rem; color: var(--primary-dark); font-weight: 600; }
+        .medal p { color: #666; font-weight: 500; }
+
+        .achievements-list {
+            background-color: var(--bg-light);
+            padding: 30px 40px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-gold);
+        }
+        .achievements-list h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary-dark); }
+        .achievements-list ul { list-style: none; }
+        .achievements-list ul li { padding: 8px 0; font-size: 1.05rem; color: #444; }
+        .achievements-list ul li::before { content: '✓'; color: var(--accent-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Login Section */
+        .login-section {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 80px 0;
+        }
+
+        .login-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-header {
+            background-color: var(--accent-gold);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .login-header h2 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .login-form {
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .login-btn-form {
+            width: 100%;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn-form:hover {
+            background-color: var(--primary-dark);
+            color: var(--accent-gold);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .forgot-password a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Platform Dashboard Styles */
+        .dashboard {
+            display: none;
+            background-color: var(--bg-light);
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .dashboard-header {
+            background-color: var(--bg-white);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .dashboard-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .user-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .user-details p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .dashboard-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .dashboard-nav ul {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        .dashboard-nav ul li {
+            margin-left: 25px;
+        }
+
+        .dashboard-nav ul li a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .dashboard-nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .logout-btn {
+            background-color: var(--danger);
+            color: var(--text-light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        .dashboard-content {
+            padding: 40px 0;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .dashboard-main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .dashboard-card {
+            background-color: var(--bg-white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .card-header h3 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .card-header a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background-color: #f1f1f1;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--accent-gold);
+            border-radius: 6px;
+        }
+
+        .trail-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .trail-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .trail-progress {
+            color: #666;
+        }
+
+        .trails-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .trail-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .trail-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .trail-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .trail-details {
+            flex: 1;
+        }
+
+        .trail-details h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        .trail-details p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .trail-status {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-active { background-color: rgba(255, 193, 7, 0.2); color: #856404; }
+        .status-completed { background-color: rgba(40, 167, 69, 0.2); color: #155724; }
+        .status-locked { background-color: rgba(108, 117, 125, 0.2); color: #495057; }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+        }
+
+        .achievement-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .achievement-details h5 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .achievement-details p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+        }
+
+        .ranking-position {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .position-1 { background-color: var(--gold); color: var(--primary-dark); }
+        .position-2 { background-color: var(--silver); color: var(--primary-dark); }
+        .position-3 { background-color: var(--bronze); }
+        .position-other { background-color: #6c757d; }
+
+        .ranking-user {
+            flex: 1;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .ranking-points {
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .resources-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .resource-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .resource-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            background-color: var(--primary-dark);
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        .resource-details {
+            flex: 1;
+        }
+
+        .resource-details h4 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .resource-details p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .resource-download {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-header h2 {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .course-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lesson-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .lesson-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            background-color: var(--primary-dark);
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .lesson-details {
+            flex: 1;
+        }
+
+        .lesson-details h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+        }
+
+        .lesson-details p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .lesson-duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+
+        .lesson-status {
+            color: var(--success);
+            font-size: 1.3rem;
+        }
+        .lesson-status.locked { color: #aaa; }
+        .lesson-status.current { color: var(--warning); }
+
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+            .about-content { flex-direction: column; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { font-size: 1.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
+            .dashboard-nav ul { display: none; }
+            .medals { gap: 20px; }
+            .medal { width: 120px; }
+            .medal-icon { width: 80px; height: 80px; font-size: 2rem; }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .achievements-grid { grid-template-columns: 1fr; }
+            .areas-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <!-- LOGO COM URL DIRETA -->
+                <img src="https://i.ibb.co/6P2tCfG/logo-dias-sem-fundo.png" alt="Logo Grupo DIAS" class="site-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#values">Valores</a></li>
+                    <li><a href="#areas">Áreas</a></li>
+                    <li><a href="#certification">Certificação</a></li>
+                    <li><a href="#login">Acesso</a></li>
+                </ul>
+            </nav>
+            <button class="login-btn" onclick="showLogin()">Acessar Plataforma</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Centro de Treinamento e Certificação</h1>
+                <p>Transformando o Guia Técnico em excelência operacional e cultura de processos.</p>
+                <a href="#about" class="btn-primary">Conheça Nossa Metodologia</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nossa Metodologia</h2>
+                    <p>Baseada no Guia Técnico 2024, nossa plataforma foi desenvolvida para padronizar conhecimento, treinar equipes com base em processos reais e criar uma cultura de excelência técnica.</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Padronização e Excelência</h3>
+                        <p>Nossa metodologia transforma o Guia Técnico do Grupo DIAS em trilhas práticas de aprendizado, garantindo que todos os colaboradores tenham acesso ao mesmo conhecimento técnico e às melhores práticas do mercado.</p>
+                        <p>Através de um sistema gamificado, criamos um ambiente motivador que estimula o desenvolvimento contínuo e a busca pela perfeição em cada etapa do processo, desde o projeto até a montagem final.</p>
+                        <p>Com avaliações práticas e estudos de caso reais, garantimos que o conhecimento seja absorvido e aplicado, reduzindo erros e aumentando a satisfação dos clientes.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/dias-team-meeting/600/500.jpg" alt="Equipe DIAS em treinamento">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values" id="values" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nossos Valores</h2>
+                    <p>A cultura do Grupo DIAS é baseada em princípios que guiam nossas ações e decisões, garantindo a excelência em tudo o que fazemos.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Cliente no Centro</h3>
+                        <p>Todas as nossas ações são pensadas para superar as expectativas dos clientes e criar experiências memoráveis.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Mentalidade de Processo</h3>
+                        <p>Respeitar e seguir os processos estabelecidos é fundamental para garantir a qualidade e consistência em nossos produtos.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Excelência Técnica</h3>
+                        <p>Buscamos constantemente o aprimoramento técnico e a qualificação contínua de nossos colaboradores.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Melhoria Contínua</h3>
+                        <p>Estamos sempre evoluindo nossos processos e produtos para atender às novas demandas do mercado.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Compromisso</h3>
+                        <p>Cumprimos o que prometemos, com responsabilidade e transparência em todas as nossas relações.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Nunca Atropele o Processo</h3>
+                        <p>Esta é uma de nossas principais regras, garantindo a qualidade e evitando retrabalhos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas Section -->
+        <section class="areas" id="areas">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Áreas de Atuação</h2>
+                    <p>Nossa plataforma oferece treinamento especializado para todas as áreas envolvidas no processo de móveis planejados.</p>
+                </div>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <div class="area-image" style="background-image: url('https://picsum.photos/seed/dias-3d-project/400/300.jpg')"></div>
+                        <div class="area-content">
+                            <h3>Projeto</h3>
+                            <p>Treinamento técnico para elaboração de projetos de móveis planejados, com foco em ergonomia, funcionalidade e viabilidade de produção.</p>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image" style="background-image: url('https://picsum.photos/seed/dias-sales-consult/400/300.jpg')"></div>
+                        <div class="area-content">
+                            <h3>Venda</h3>
+                            <p>Capacitação para atendimento ao cliente, entendimento de necessidades, apresentação de soluções e fechamento de vendas.</p>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image" style="background-image: url('https://picsum.photos/seed/dias-measuring-tape/400/300.jpg')"></div>
+                        <div class="area-content">
+                            <h3>Medição</h3>
+                            <p>Técnicas precisas de medição, identificação de desafios no local e preparação de ambientes para instalação.</p>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image" style="background-image: url('https://picsum.photos/seed/dias-blueprint-review/400/300.jpg')"></div>
+                        <div class="area-content">
+                            <h3>Conferência</h3>
+                            <p>Revisão detalhada de projetos, identificação de possíveis problemas e otimização antes da produção.</p>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image" style="background-image: url('https://picsum.photos/seed/dias-assembly-worker/400/300.jpg')"></div>
+                        <div class="area-content">
+                            <h3>Montagem</h3>
+                            <p>Técnicas de montagem profissional, ajustes finos, acabamento e entrega ao cliente com padrão de excelência.</p>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image" style="background-image: url('https://picsum.photos/seed/dias-happy-client/400/300.jpg')"></div>
+                        <div class="area-content">
+                            <h3>Pós-venda</h3>
+                            <p>Acompanhamento, suporte técnico, garantia e fidelização de clientes através de um serviço excepcional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certification Section -->
+        <section class="certification" id="certification" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Sistema de Certificação e Medalhas</h2>
+                    <p>Nossa plataforma reconhece e valoriza o desenvolvimento profissional através de um sistema de certificações e conquistas.</p>
+                </div>
+                <div class="certification-content">
+                    <div class="medals">
+                        <div class="medal">
+                            <div class="medal-icon bronze-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>Bronze</h3>
+                            <p>Iniciante</p>
+                        </div>
+                        <div class="medal">
+                            <div class="medal-icon silver-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>Prata</h3>
+                            <p>Intermediário</p>
+                        </div>
+                        <div class="medal">
+                            <div class="medal-icon gold-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>Ouro</h3>
+                            <p>Avançado</p>
+                        </div>
+                        <div class="medal">
+                            <div class="medal-icon diamond-medal">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h3>Diamante</h3>
+                            <p>Especialista DIAS</p>
+                        </div>
+                    </div>
+                    <div class="achievements-list">
+                        <h3>Conquistas Especiais</h3>
+                        <ul>
+                            <li>"Zero Erro em Avaliação" - Perfeito em todas as provas</li>
+                            <li>"Especialista em Cozinhas" - Domínio total em projetos de cozinha</li>
+                            <li>"Montagem Perfeita" - Excelência reconhecida em instalações</li>
+                            <li>"Projeto Sem Retrabalho" - Eficiência e precisão em projetos</li>
+                            <li>"Top 1% da Plataforma" - Destaque entre todos os usuários</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section class="login-section" id="login">
+            <div class="container">
+                <div class="section-title" style="color: white;">
+                    <h2>Acesso à Plataforma</h2>
+                    <p>Entre com suas credenciais para acessar o Centro de Treinamento e Certificação</p>
+                </div>
+                <div class="login-container">
+                    <div class="login-header">
+                        <h2>Área do Colaborador</h2>
+                    </div>
+                    <form class="login-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="username">CPF ou E-mail</label>
+                            <input type="text" id="username" name="username" placeholder="exemplo@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                        </div>
+                        <button type="submit" class="login-btn-form">Entrar na Plataforma</button>
+                        <div class="forgot-password">
+                            <a href="#">Esqueci minha senha</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GRUPO DIAS</h3>
+                    <p>Transformando sonhos em móveis planejados de alto padrão, com excelência técnica e compromisso com a satisfação do cliente.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#values">Nossos Valores</a></li>
+                        <li><a href="#areas">Áreas de Atuação</a></li>
+                        <li><a href="#certification">Certificações</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Bairro Centro</li>
+                        <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> contato@grupodias.com.br</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GRUPO DIAS - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dashboard (Hidden by default) -->
+    <div class="dashboard" id="dashboard">
+        <div class="dashboard-header">
+            <div class="container dashboard-container">
+                <div class="user-info">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-details">
+                        <h3>João da Silva</h3>
+                        <p>Projetista Técnico | Nível Ouro</p>
+                    </div>
+                </div>
+                <div class="dashboard-nav">
+                    <ul>
+                        <li><a href="#" onclick="showDashboardSection('trails')">Trilhas</a></li>
+                        <li><a href="#" onclick="showDashboardSection('achievements')">Conquistas</a></li>
+                        <li><a href="#" onclick="showDashboardSection('ranking')">Ranking</a></li>
+                        <li><a href="#" onclick="showDashboardSection('resources')">Recursos</a></li>
+                    </ul>
+                    <button class="logout-btn" onclick="logout()">Sair</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="container">
+                <div class="dashboard-grid">
+                    <div class="dashboard-main">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Minhas Trilhas de Aprendizado</h3>
+                                <a href="#">Ver todas</a>
+                            </div>
+                            <div class="trails-list">
+                                <div class="trail-item" onclick="openTrailModal(1)">
+                                    <div class="trail-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="trail-details">
+                                        <h4>Trilha 1 - Cultura Grupo DIAS</h4>
+                                        <p>Conheça a história, valores e regras que fundamentam nossa empresa.</p>
+                                    </div>
+                                    <span class="trail-status status-completed">Concluída</span>
+                                </div>
+                                <div class="trail-item" onclick="openTrailModal(2)">
+                                    <div class="trail-icon">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <div class="trail-details">
+                                        <h4>Trilha 2 - Processo Completo do Cliente</h4>
+                                        <p>Entenda cada etapa da jornada do cliente, da captação ao pós-venda.</p>
+                                    </div>
+                                    <span class="trail-status status-completed">Concluída</span>
+                                </div>
+                                <div class="trail-item" onclick="openTrailModal(3)">
+                                    <div class="trail-icon">
+                                        <i class="fas fa-drafting-compass"></i>
+                                    </div>
+                                    <div class="trail-details">
+                                        <h4>Trilha 3 - Projeto Técnico (Avançado)</h4>
+                                        <p>Aprofunde-se em técnicas de projeto para cada ambiente e material.</p>
+                                    </div>
+                                    <span class="trail-status status-active">Em andamento</span>
+                                </div>
+                                <div class="trail-item" onclick="openTrailModal(4)">
+                                    <div class="trail-icon">
+                                        <i class="fas fa-ruler-combined"></i>
+                                    </div>
+                                    <div class="trail-details">
+                                        <h4>Trilha 4 - Medição Profissional</h4>
+                                        <p>Técnicas precisas de medição para evitar problemas futuros.</p>
+                                    </div>
+                                    <span class="trail-status status-locked">Bloqueado</span>
+                                </div>
+                                <div class="trail-item" onclick="openTrailModal(5)">
+                                    <div class="trail-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div class="trail-details">
+                                        <h4>Trilha 5 - Conferência Técnica</h4>
+                                        <p>Revisão detalhada de projetos para garantir a qualidade final.</p>
+                                    </div>
+                                    <span class="trail-status status-locked">Bloqueado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Progresso Geral</h3>
+                            </div>
+                            <div class="progress-info">
+                                <div class="trail-info">
+                                    <span class="trail-name">Nível Atual:</span>
+                                    <span class="trail-progress">Ouro</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 65%;"></div>
+                                </div>
+                                <div class="trail-info">
+                                    <span class="trail-name">Próximo Nível:</span>
+                                    <span class="trail-progress">Diamante (35% restante)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-sidebar">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Minhas Conquistas</h3>
+                            </div>
+                            <div class="achievements-grid">
+                                <div class="achievement-item">
+                                    <div class="achievement-icon" style="background-color: var(--gold);">
+                                        <i class="fas fa-medal"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <h5>Projetista Ouro</h5>
+                                        <p>Alcance o nível Ouro em projetos</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon" style="background-color: var(--success);">
+                                        <i class="fas fa-check-double"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <h5>Zero Erros</h5>
+                                        <p>5 avaliações sem erros</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon" style="background-color: var(--info);">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <h5>Especialista em Cozinhas</h5>
+                                        <p>Conclua todos os módulos de cozinha</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon" style="background-color: var(--warning);">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="achievement-details">
+                                        <h5>Sequência Perfeita</h5>
+                                        <p>30 dias consecutivos de estudo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Ranking Mensal</h3>
+                            </div>
+                            <div class="ranking-list">
+                                <div class="ranking-item">
+                                    <div class="ranking-position position-1">1</div>
+                                    <div class="ranking-user">Maria Santos</div>
+                                    <div class="ranking-points">2.450 pts</div>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-position position-2">2</div>
+                                    <div class="ranking-user">Carlos Oliveira</div>
+                                    <div class="ranking-points">2.380 pts</div>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-position position-3">3</div>
+                                    <div class="ranking-user">João da Silva</div>
+                                    <div class="ranking-points">2.290 pts</div>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-position position-other">4</div>
+                                    <div class="ranking-user">Ana Costa</div>
+                                    <div class="ranking-points">2.150 pts</div>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-position position-other">5</div>
+                                    <div class="ranking-user">Pedro Lima</div>
+                                    <div class="ranking-points">2.080 pts</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Recursos</h3>
+                            </div>
+                            <div class="resources-list">
+                                <div class="resource-item" onclick="openResource('guide')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="resource-details">
+                                        <h4>Guia Técnico 2024</h4>
+                                        <p>Versão digital completa</p>
+                                    </div>
+                                    <i class="fas fa-download resource-download"></i>
+                                </div>
+                                <div class="resource-item" onclick="openResource('checklist')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-list-check"></i>
+                                    </div>
+                                    <div class="resource-details">
+                                        <h4>Checklists</h4>
+                                        <p>Modelos padrão para download</p>
+                                    </div>
+                                    <i class="fas fa-download resource-download"></i>
+                                </div>
+                                <div class="resource-item" onclick="openResource('videos')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <div class="resource-details">
+                                        <h4>Vídeos Demonstrativos</h4>
+                                        <p>Tutoriais e boas práticas</p>
+                                    </div>
+                                    <i class="fas fa-play resource-download"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Trail Content -->
+    <div class="modal" id="trailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Trilha de Aprendizado</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-content" id="courseContent">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (username && password) {
+                // Hide the main site and show the dashboard
+                document.querySelector('header').style.display = 'none';
+                document.querySelector('main').style.display = 'none';
+                document.querySelector('footer').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                
+                // Initialize dashboard
+                initializeDashboard();
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+
+        // Initialize dashboard
+        function initializeDashboard() {
+            console.log('Dashboard initialized for user.');
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Tem certeza que deseja sair da plataforma?')) {
+                document.querySelector('header').style.display = 'block';
+                document.querySelector('main').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                document.getElementById('dashboard').style.display = 'none';
+                document.getElementById('loginForm').reset();
+            }
+        }
+
+        // Show login section
+        function showLogin() {
+            document.getElementById('login').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show dashboard section (placeholder)
+        function showDashboardSection(section) {
+            console.log('Navigating to section:', section);
+        }
+
+        // Open trail modal
+        function openTrailModal(trailId) {
+            const modal = document.getElementById('trailModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const courseContent = document.getElementById('courseContent');
+            
+            let trailContent = '';
+            let trailName = '';
+
+            switch(trailId) {
+                case 1:
+                    trailName = 'Trilha 1 - Cultura Grupo DIAS';
+                    trailContent = `
+                        <div class="lesson-item"><div class="lesson-number">1</div><div class="lesson-details"><h4>História da Empresa</h4><p>Conheça a trajetória do Grupo DIAS.</p></div><span class="lesson-duration">15 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">2</div><div class="lesson-details"><h4>Valores e Missão</h4><p>Os princípios que nos guiam.</p></div><span class="lesson-duration">10 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">3</div><div class="lesson-details"><h4>As 8 Regras do Grupo DIAS</h4><p>Diretrizes fundamentais.</p></div><span class="lesson-duration">20 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">4</div><div class="lesson-details"><h4>Mentalidade de Processo</h4><p>A importância de seguir os processos.</p></div><span class="lesson-duration">15 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">5</div><div class="lesson-details"><h4>"Nunca Atropele o Processo"</h4><p>O impacto de seguir os fluxos.</p></div><span class="lesson-duration">18 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">6</div><div class="lesson-details"><h4>Avaliação Final</h4><p>Teste seus conhecimentos.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                    `;
+                    break;
+                case 2:
+                    trailName = 'Trilha 2 - Processo Completo do Cliente';
+                    trailContent = `
+                        <div class="lesson-item"><div class="lesson-number">1</div><div class="lesson-details"><h4>Engrenagem do Sucesso</h4><p>Visão geral do processo.</p></div><span class="lesson-duration">20 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">2</div><div class="lesson-details"><h4>Captação</h4><p>Como atrair e qualificar leads.</p></div><span class="lesson-duration">25 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">3</div><div class="lesson-details"><h4>Projeto</h4><p>Desenvolvimento de projetos.</p></div><span class="lesson-duration">40 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">4</div><div class="lesson-details"><h4>Venda</h4><p>Técnicas de apresentação.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">5</div><div class="lesson-details"><h4>Medição</h4><p>Procedimentos corretos.</p></div><span class="lesson-duration">35 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">6</div><div class="lesson-details"><h4>Conferência</h4><p>Revisão técnica.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">7</div><div class="lesson-details"><h4>Fabricação e Entrega</h4><p>Processos industriais.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">8</div><div class="lesson-details"><h4>Montagem e Pós-venda</h4><p>Instalação e fidelização.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">9</div><div class="lesson-details"><h4>Avaliação Final</h4><p>Teste seus conhecimentos.</p></div><span class="lesson-duration">45 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                    `;
+                    break;
+                case 3:
+                    trailName = 'Trilha 3 - Projeto Técnico (Avançado)';
+                    trailContent = `
+                        <div class="lesson-item"><div class="lesson-number">1</div><div class="lesson-details"><h4>Briefing Correto</h4><p>Coletando informações essenciais.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">2</div><div class="lesson-details"><h4>Cozinha - Regra do Triângulo</h4><p>Otimização de fluxos.</p></div><span class="lesson-duration">35 min</span><div class="lesson-status"><i class="fas fa-check-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">3</div><div class="lesson-details"><h4>Cozinha - Eletrodomésticos</h4><p>Especificações técnicas.</p></div><span class="lesson-duration">40 min</span><div class="lesson-status current"><i class="fas fa-play-circle"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">4</div><div class="lesson-details"><h4>Cozinha - Ergonomia</h4><p>Projetando para conforto.</p></div><span class="lesson-duration">35 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">5</div><div class="lesson-details"><h4>Área Gourmet</h4><p>Projetos integrados.</p></div><span class="lesson-duration">40 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">6</div><div class="lesson-details"><h4>Lavanderia</h4><p>Otimização de espaços.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">7</div><div class="lesson-details"><h4>Banheiros e Closets</h4><p>Soluções inteligentes.</p></div><span class="lesson-duration">40 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">8</div><div class="lesson-details"><h4>Materiais: MDF e Ferragens</h4><p>Especificações e aplicações.</p></div><span class="lesson-duration">30 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">9</div><div class="lesson-details"><h4>Erros que Quebram a Empresa</h4><p>Como evitá-los.</p></div><span class="lesson-duration">40 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                        <div class="lesson-item"><div class="lesson-number">10</div><div class="lesson-details"><h4>Avaliação Final</h4><p>Teste seus conhecimentos.</p></div><span class="lesson-duration">60 min</span><div class="lesson-status locked"><i class="fas fa-lock"></i></div></div>
+                    `;
+                    break;
+                // Add more cases for other trails as needed
+                default:
+                    trailName = 'Trilha de Aprendizado';
+                    trailContent = '<p>Conteúdo da trilha não encontrado.</p>';
+            }
+            
+            modalTitle.textContent = trailName;
+            courseContent.innerHTML = trailContent;
+            modal.style.display = 'flex';
+        }
+
+        // Open resource (placeholder)
+        function openResource(resourceType) {
+            alert(`Abrindo recurso: ${resourceType}. Em um ambiente real, isso abriria o documento ou vídeo correspondente.`);
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('trailModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('trailModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
